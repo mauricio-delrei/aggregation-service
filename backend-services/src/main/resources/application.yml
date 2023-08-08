@@ -1,0 +1,30 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    url: 'jdbc:h2:mem:backend-services'
+    username: sa
+    password: null
+    driver-class-name: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
+shipments:
+  api:
+    url: 'http://localhost:8080'
+track:
+  api:
+    url: 'http://localhost:8080'
+pricing:
+  api:
+    url: 'http://localhost:8080'
